@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Dukaandar Referral Form — Akshardham Associates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0F766E;
+    --primary-dark: #115E59;
+    --primary-light: #D1FAE5;
+    --primary-soft: #F0FDF4;
+    --accent: #B45309;
+    --accent-light: #FEF3C7;
+    --accent-soft: #FFFBEB;
+    --dark: #1F2937;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --success: #059669;
+    --danger: #DC2626;
+    --bg: #F9FAFB;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', 'Noto Sans Devanagari', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 100px;
+  }
+
+  /* ===== HEADER ===== */
+  .app-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 18px 16px 22px;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .app-header .brand {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--accent-light);
+    text-transform: uppercase;
+    opacity: 0.95;
+  }
+
+  .app-header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 4px;
+    letter-spacing: -0.3px;
+  }
+
+  .app-header .subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 2px;
+    font-weight: 400;
+  }
+
+  /* ===== MAIN ===== */
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  /* ===== SECTION ===== */
+  .section {
+    background: white;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    border: 1px solid var(--border);
+  }
+
+  .section-header {
+    padding: 14px 16px;
+    background: var(--primary-soft);
+    border-bottom: 1px solid var(--primary-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-num {
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-dark);
+  }
+
+  .section-title small {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+    margin-top: 1px;
+  }
+
+  .section-body { padding: 16px; }
+
+  /* ===== HINT BOX ===== */
+  .hint {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: var(--dark);
+    line-height: 1.55;
+  }
+  .hint strong { color: var(--accent); }
+
+  /* ===== FORM ===== */
+  .field { margin-bottom: 14px; }
+  .field:last-child { margin-bottom: 0; }
+
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .field label .required {
+    color: var(--danger);
+    margin-left: 2px;
+  }
+
+  .field label small {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 11px;
+    display: block;
+    margin-top: 2px;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1.5px solid var(--border);
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--dark);
+    background: white;
+    transition: all 0.15s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 70px;
+    line-height: 1.5;
+  }
+
+  /* ===== REFERRAL CARD ===== */
+  .referral-card {
+    background: var(--primary-soft);
+    border: 1.5px solid var(--primary-light);
+    border-radius: 11px;
+    padding: 12px;
+    margin-bottom: 10px;
+    transition: all 0.15s;
+  }
+
+  .referral-card:last-child { margin-bottom: 0; }
+
+  .referral-card.filled {
+    background: white;
+    border-color: var(--primary);
+    box-shadow: 0 2px 6px rgba(15, 118, 110, 0.08);
+  }
+
+  .referral-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .referral-num {
+    width: 24px;
+    height: 24px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .referral-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-dark);
+  }
+
+  .referral-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .referral-row input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  @media (max-width: 480px) {
+    .referral-row { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  /* ===== SUBMIT BAR ===== */
+  .submit-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+    z-index: 50;
+  }
+
+  .submit-btn {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    display: block;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border: none;
+    border-radius: 11px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+    transition: all 0.15s;
+    letter-spacing: 0.3px;
+  }
+
+  .submit-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(15, 118, 110, 0.4); }
+  .submit-btn:active { transform: translateY(0); }
+  .submit-btn:disabled {
+    background: var(--muted);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* ===== SUCCESS SCREEN ===== */
+  .success-screen {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 14px;
+    margin: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .success-icon {
+    width: 72px;
+    height: 72px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    font-size: 36px;
+  }
+
+  .success-screen h2 {
+    font-size: 22px;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .success-screen p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  .summary-box {
+    background: var(--primary-soft);
+    border: 1px solid var(--primary-light);
+    border-radius: 11px;
+    padding: 14px;
+    margin: 0 auto 22px;
+    max-width: 420px;
+    text-align: left;
+    font-size: 13.5px;
+  }
+  .summary-box .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dashed var(--primary-light);
+  }
+  .summary-box .row:last-child { border-bottom: none; }
+  .summary-box .row span:first-child { color: var(--muted); font-weight: 500; }
+  .summary-box .row span:last-child  { color: var(--dark); font-weight: 600; }
+
+  .new-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .new-btn:hover { background: var(--primary-dark); }
+
+  /* ===== ERROR ===== */
+  .error-text {
+    color: var(--danger);
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: 500;
+    display: none;
+  }
+  .field.error input,
+  .field.error textarea { border-color: var(--danger); }
+  .field.error .error-text { display: block; }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="app-header">
+  <div class="brand">Akshardham Associates</div>
+  <h1>Dukaandar Referral Form</h1>
+  <p class="subtitle">Dukaandar ki jaankari + 5 referral naam</p>
+</header>
+
+<!-- ===== FORM ===== -->
+<main id="formScreen">
+
+  <!-- SECTION 1: SHOP DETAILS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title">
+        Dukaandar ki Jaankari
+        <small>Naam aur address</small>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="field" id="f-dukaandarName">
+        <label>Dukaandar ka Naam <span class="required">*</span></label>
+        <input type="text" id="dukaandarName" placeholder="जैसे — रमेश कुमार जी" autocomplete="name">
+        <div class="error-text">Dukaandar ka naam zaroori hai</div>
+      </div>
+
+      <div class="field" id="f-dukaandarMobile">
+        <label>Dukaandar ka Mobile
+          <small>Optional — par follow-up ke liye useful</small>
+        </label>
+        <input type="tel" id="dukaandarMobile" placeholder="98XXXXXXXX" maxlength="10" inputmode="numeric">
+      </div>
+
+      <div class="field" id="f-address">
+        <label>Dukan ka Address <span class="required">*</span>
+          <small>Market, mohalla, gaon ya sheher ka naam</small>
+        </label>
+        <textarea id="address" placeholder="जैसे — मेन मार्केट, झालरापाटन, जिला झालावाड़"></textarea>
+        <div class="error-text">Address zaroori hai</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: REFERRALS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title">
+        5 Referral Naam
+        <small>Jin logon ke baare mein dukaandar ne bataya</small>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="hint">
+        <strong>💡 Tip:</strong> Dukaandar se poochiye — <em>"aapke jaan-pehchaan mein 5 aise log batayein jinhe plot lene mein interest ho sakta hai"</em>. Naam ke saath mobile bhi le sakte ho — phone number optional hai par hamari team ke follow-up ke liye bahut useful.
+      </div>
+
+      <div id="referralList">
+        <!-- Generated by JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: COLLECTED BY -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title">
+        Form Bharne Wala
+        <small>Akshardham team member</small>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="field" id="f-collectedBy">
+        <label>Aapka Naam <span class="required">*</span></label>
+        <input type="text" id="collectedBy" placeholder="जैसे — रुपेश जी / Rupesh Ji">
+        <div class="error-text">Apna naam likhiye</div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== SUCCESS SCREEN ===== -->
+<div class="success-screen" id="successScreen">
+  <div class="success-icon">✓</div>
+  <h2>Form Submit Ho Gaya!</h2>
+  <p>Dukaandar aur unke 5 referrals ki jaankari record ho gayi hai. Team jaldi hi follow-up karegi.</p>
+  <div class="summary-box" id="summaryBox"></div>
+  <button class="new-btn" onclick="resetForm()">+ Naya Dukaandar Form</button>
+</div>
+
+<!-- ===== SUBMIT BAR ===== -->
+<div class="submit-bar" id="submitBar">
+  <button type="button" class="submit-btn" id="submitButton" onclick="submitForm()">Form Submit Karein ✓</button>
+</div>
+
+<script>
+/* ============================================================
+   CONFIG — Google Sheets Webhook
+   Replace with your Apps Script URL when ready.
+   ============================================================ */
+const GOOGLE_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxvLqnHs9y5fbQ5Jepqc82mY-qLJ36dvCDIaxKIUAR-0ngwDyXzcLn9VC5twNoqZkZ4/exec';
+
+/* ============================================================
+   GENERATE 5 REFERRAL CARDS
+   ============================================================ */
+function buildReferralCards() {
+  const list = document.getElementById('referralList');
+  let html = '';
+  for (let i = 1; i <= 5; i++) {
+    html += `
+      <div class="referral-card" id="refCard${i}">
+        <div class="referral-head">
+          <div class="referral-num">${i}</div>
+          <div class="referral-label">Referral #${i}${i <= 3 ? ' <span style="color:var(--danger);">*</span>' : ' <small style="color:var(--muted); font-weight:400;">(optional)</small>'}</div>
+        </div>
+        <div class="referral-row">
+          <input type="text" id="refName${i}" placeholder="${i}. Naam" oninput="updateCard(${i})">
+          <input type="tel" id="refMobile${i}" placeholder="Mobile (optional)" maxlength="10" inputmode="numeric" oninput="updateCard(${i})">
+        </div>
+        <div class="error-text" id="refErr${i}">Naam zaroori hai</div>
+      </div>
+    `;
+  }
+  list.innerHTML = html;
+}
+
+function updateCard(i) {
+  const card = document.getElementById('refCard' + i);
+  const name = document.getElementById('refName' + i).value.trim();
+  if (name.length > 0) {
+    card.classList.add('filled');
+    card.classList.remove('error');
+    document.getElementById('refErr' + i).style.display = 'none';
+  } else {
+    card.classList.remove('filled');
+  }
+}
+
+/* ============================================================
+   VALIDATION
+   ============================================================ */
+function validateField(id) {
+  const fieldWrap = document.getElementById('f-' + id);
+  const value = document.getElementById(id).value.trim();
+  if (!value) {
+    fieldWrap.classList.add('error');
+    return false;
+  }
+  fieldWrap.classList.remove('error');
+  return true;
+}
+
+function validateForm() {
+  let ok = true;
+  let firstError = null;
+
+  // Required text fields
+  ['dukaandarName', 'address', 'collectedBy'].forEach(id => {
+    if (!validateField(id)) {
+      ok = false;
+      if (!firstError) firstError = document.getElementById('f-' + id);
+    }
+  });
+
+  // At least first 3 referral names required
+  for (let i = 1; i <= 3; i++) {
+    const name = document.getElementById('refName' + i).value.trim();
+    const card = document.getElementById('refCard' + i);
+    const err = document.getElementById('refErr' + i);
+    if (!name) {
+      card.classList.add('error');
+      err.style.display = 'block';
+      err.style.color = 'var(--danger)';
+      ok = false;
+      if (!firstError) firstError = card;
+    } else {
+      card.classList.remove('error');
+      err.style.display = 'none';
+    }
+  }
+
+  if (firstError) {
+    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  return ok;
+}
+
+/* ============================================================
+   COLLECT DATA
+   ============================================================ */
+function collectData() {
+  const referrals = [];
+  for (let i = 1; i <= 5; i++) {
+    const name = document.getElementById('refName' + i).value.trim();
+    const mob  = document.getElementById('refMobile' + i).value.trim();
+    if (name) referrals.push({ name, mobile: mob });
+  }
+
+  return {
+    timestamp: new Date().toISOString(),
+    submittedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+    dukaandarName:   document.getElementById('dukaandarName').value.trim(),
+    dukaandarMobile: document.getElementById('dukaandarMobile').value.trim(),
+    address:         document.getElementById('address').value.trim(),
+    collectedBy:     document.getElementById('collectedBy').value.trim(),
+    referralCount:   referrals.length,
+    // Flat fields for easy Google Sheets columns
+    ref1Name: referrals[0]?.name || '',  ref1Mobile: referrals[0]?.mobile || '',
+    ref2Name: referrals[1]?.name || '',  ref2Mobile: referrals[1]?.mobile || '',
+    ref3Name: referrals[2]?.name || '',  ref3Mobile: referrals[2]?.mobile || '',
+    ref4Name: referrals[3]?.name || '',  ref4Mobile: referrals[3]?.mobile || '',
+    ref5Name: referrals[4]?.name || '',  ref5Mobile: referrals[4]?.mobile || '',
+    referralsJSON: JSON.stringify(referrals)
+  };
+}
+
+/* ============================================================
+   SUBMIT
+   ============================================================ */
+async function submitForm() {
+  if (!validateForm()) return;
+
+  const btn = document.getElementById('submitButton');
+  btn.disabled = true;
+  btn.textContent = 'Submit ho raha hai...';
+
+  const data = collectData();
+
+  try {
+    if (GOOGLE_SHEETS_WEBHOOK && GOOGLE_SHEETS_WEBHOOK !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+      await fetch(GOOGLE_SHEETS_WEBHOOK, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    } else {
+      // No webhook configured — simulate
+      await new Promise(r => setTimeout(r, 700));
+      console.log('Form data (no webhook configured):', data);
+    }
+
+    showSuccess(data);
+
+  } catch (err) {
+    alert('Submit karne mein problem aayi: ' + err.message + '\n\nKripya phir try karein.');
+    btn.disabled = false;
+    btn.textContent = 'Form Submit Karein ✓';
+  }
+}
+
+/* ============================================================
+   SUCCESS SCREEN
+   ============================================================ */
+function showSuccess(data) {
+  document.getElementById('formScreen').style.display = 'none';
+  document.getElementById('submitBar').style.display = 'none';
+  document.getElementById('successScreen').style.display = 'block';
+
+  const box = document.getElementById('summaryBox');
+  box.innerHTML = `
+    <div class="row"><span>Dukaandar</span><span>${escapeHtml(data.dukaandarName)}</span></div>
+    <div class="row"><span>Address</span><span>${escapeHtml(data.address.length > 30 ? data.address.slice(0,30)+'…' : data.address)}</span></div>
+    <div class="row"><span>Referrals</span><span>${data.referralCount} naam</span></div>
+    <div class="row"><span>Bhara</span><span>${escapeHtml(data.collectedBy)}</span></div>
+  `;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function escapeHtml(s) {
+  return String(s || '').replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+function resetForm() {
+  document.querySelectorAll('input, textarea').forEach(el => el.value = '');
+  document.querySelectorAll('.field').forEach(f => f.classList.remove('error'));
+  document.querySelectorAll('.referral-card').forEach(c => {
+    c.classList.remove('filled');
+    c.classList.remove('error');
+  });
+  document.querySelectorAll('.error-text').forEach(e => e.style.display = 'none');
+
+  document.getElementById('formScreen').style.display = 'block';
+  document.getElementById('submitBar').style.display = 'block';
+  document.getElementById('successScreen').style.display = 'none';
+
+  const btn = document.getElementById('submitButton');
+  btn.disabled = false;
+  btn.textContent = 'Form Submit Karein ✓';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+buildReferralCards();
+
+// Auto-clear field error on typing
+document.addEventListener('input', (e) => {
+  const fieldWrap = e.target.closest('.field');
+  if (fieldWrap && fieldWrap.classList.contains('error') && e.target.value.trim()) {
+    fieldWrap.classList.remove('error');
+  }
+});
+</script>
+</body>
+</html>
